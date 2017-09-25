@@ -80,7 +80,6 @@ public class LaboonCoin {
      */
     
     public int hash(String data) {
-	// TODO - IMPLEMENT LABOONHASH
         int n = 10000000;
         char[] dataArr = data.toCharArray();
 
@@ -107,8 +106,20 @@ public class LaboonCoin {
      */
     
     public boolean validHash(int difficulty, int hash) {
-	// TODO - CHECK FOR VALID HASHES
-	return false;
+        
+        String hashHexStr = String.format("%1$08X", hash);
+        char[] hexStrArr  = hashHexStr.toCharArray();
+
+        int leadingZero = 0;
+        for (char hbyte: hexStrArr){
+            if(hbyte == '0'){
+                leadingZero++;
+            } else{
+                break;
+            }
+        }
+        
+	    return leadingZero >= difficulty;
     }
 
     /**
