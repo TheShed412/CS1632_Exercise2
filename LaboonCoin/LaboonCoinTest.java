@@ -59,5 +59,21 @@ public class LaboonCoinTest {
     }
 	    
     // TODO - PUT YOUR SIX TESTS HERE
-    
+    @Test
+    public void testHashingEmpty() {
+        int actual = _l.hash("");
+
+        assertEquals(actual, 10000000);
+    }
+
+    @Test
+    public void testHashingLongStr() {
+
+        //TODO: Make this string a bunch of nulls
+        String bigStr = "I have to make this long and stuff I don't know how long "+
+        "thoughhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
+        int actual = _l.hash(bigStr);
+
+        
+    }
 }
