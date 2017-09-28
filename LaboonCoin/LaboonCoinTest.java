@@ -76,4 +76,11 @@ public class LaboonCoinTest {
 
         assertEquals(actual, 0);
     }
+
+    @Test
+    public void testEmptyStr() {
+        int actual = _l.hash("");
+
+        assertEquals(actual, 10000000);
+    }
 }
