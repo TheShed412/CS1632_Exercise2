@@ -74,13 +74,23 @@ public class LaboonCoinTest {
                         "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
         int actual = _l.hash(bigStr);
 
-        assertEquals(actual, 0);
+        assertEquals(0, actual);
     }
 
     @Test
     public void testEmptyStr() {
         int actual = _l.hash("");
 
-        assertEquals(actual, 10000000);
+        assertEquals(10000000, actual);
+    }
+
+    @Test
+    public void whiteSpaceHash() {
+        String whiteSpace = "    "; // tab: 9, spce: 32
+
+        //(10000000*9) + 9 = 90000009
+        //(90000009*32) + 32 = 2880000320
+        int actual = _l.hash(whiteSpace);
+        assertEquals(-1414966976, actual);
     }
 }
