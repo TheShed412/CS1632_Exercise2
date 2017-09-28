@@ -69,11 +69,11 @@ public class LaboonCoinTest {
     @Test
     public void testHashingLongStr() {
 
-        //TODO: Make this string a bunch of nulls
-        String bigStr = "I have to make this long and stuff I don't know how long "+
-        "thoughhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh";
+        String bigStr = "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"+
+                        "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"+
+                        "\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
         int actual = _l.hash(bigStr);
 
-        
+        assertEquals(actual, 0);
     }
 }
