@@ -118,7 +118,7 @@ public class LaboonCoin {
                 break;
             }
         }
-        
+
 	    return leadingZero >= difficulty;
     }
 

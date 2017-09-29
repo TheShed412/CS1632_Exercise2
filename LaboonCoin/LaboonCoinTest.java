@@ -93,4 +93,12 @@ public class LaboonCoinTest {
         int actual = _l.hash(whiteSpace);
         assertEquals(-1414966976, actual);
     }
+
+    @Test
+    public void failureTest() {
+        int hash = 0x11111111;
+        boolean fail = _l.validHash(1, hash);
+
+        assertEquals(false, fail);
+    }
 }
