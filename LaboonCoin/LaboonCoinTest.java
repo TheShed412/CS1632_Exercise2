@@ -101,4 +101,12 @@ public class LaboonCoinTest {
 
         assertEquals(false, fail);
     }
+
+    @Test
+    public void negativeTest() {
+        int neg = -1;
+        boolean actual = _l.validHash(0, neg);
+
+        assertEquals(true, actual);
+    }
 }
