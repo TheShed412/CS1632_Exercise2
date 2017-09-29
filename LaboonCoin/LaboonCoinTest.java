@@ -103,9 +103,17 @@ public class LaboonCoinTest {
     }
 
     @Test
-    public void negativeTest() {
+    public void negativeHashTest() {
         int neg = -1;
         boolean actual = _l.validHash(0, neg);
+
+        assertEquals(true, actual);
+    }
+
+    @Test
+    public void negativeDifficultyTest() {
+        int num = 0x11111111;
+        boolean actual = _l.validHash(-1, num);
 
         assertEquals(true, actual);
     }
